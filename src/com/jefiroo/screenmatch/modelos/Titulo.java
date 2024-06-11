@@ -1,12 +1,18 @@
 package com.jefiroo.screenmatch.modelos;
 
-public class Titulo {
+import java.util.Collection;
+
+public class Titulo implements Comparable<Titulo> {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
     private double somaDasAvaliacoes;
     private int totalDeAvalicoes;
     private int duracaoEmMinutos;
+
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
+    }
 
     public Titulo(String nome, int anoDeLancamento) {
         this.nome = nome;
@@ -55,5 +61,10 @@ public class Titulo {
 
     public String getNome() {
         return nome;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return this.getNome().compareTo(outroTitulo.getNome());
     }
 }

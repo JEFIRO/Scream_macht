@@ -5,6 +5,7 @@ import com.jefiroo.screenmatch.modelos.Serie;
 import com.jefiroo.screenmatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class MainComListas {
     public static void main(String[] args) {
@@ -16,8 +17,6 @@ public class MainComListas {
     Filme outroFilme = new Filme("Avengers",2023);
     outroFilme.avalia(9);
     Serie lost = new Serie("Lost", 2019);
-
-    Filme f1 = meuFilme;
 
     ArrayList<Titulo> listaDeFilmes = new ArrayList<>(0);
     listaDeFilmes.add(meuFilme);
@@ -31,5 +30,7 @@ public class MainComListas {
             System.out.println("Classificação " + filme.getClassificacao());
             }
         }
+        Collections.sort(listaDeFilmes);
+    System.out.println(listaDeFilmes);
     }
 }
