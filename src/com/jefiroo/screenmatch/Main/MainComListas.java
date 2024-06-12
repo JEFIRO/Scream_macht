@@ -4,8 +4,7 @@ import com.jefiroo.screenmatch.modelos.Filme;
 import com.jefiroo.screenmatch.modelos.Serie;
 import com.jefiroo.screenmatch.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
+import java.util.*;
 
 public class MainComListas {
     public static void main(String[] args) {
@@ -18,7 +17,7 @@ public class MainComListas {
     outroFilme.avalia(9);
     Serie lost = new Serie("Lost", 2019);
 
-    ArrayList<Titulo> listaDeFilmes = new ArrayList<>(0);
+    List<Titulo> listaDeFilmes = new LinkedList<>();
     listaDeFilmes.add(meuFilme);
     listaDeFilmes.add(outroFilme);
     listaDeFilmes.add(novoFilme);
@@ -31,6 +30,8 @@ public class MainComListas {
             }
         }
         Collections.sort(listaDeFilmes);
+    System.out.println(listaDeFilmes);
+    listaDeFilmes.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
     System.out.println(listaDeFilmes);
     }
 }
